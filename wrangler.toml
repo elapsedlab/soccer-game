@@ -1,0 +1,10 @@
+# ── Cloudflare Workers deployment ───────────────────────────────────────────
+# Static-assets-only Worker: no server code, Cloudflare serves ./public.
+# Deploy manually with `npx wrangler deploy`, or connect this repo to
+# Workers Builds in the Cloudflare dashboard for auto-deploy on push.
+
+name = "soccer-game"
+compatibility_date = "2026-07-01"
+
+[assets]
+directory = "./public"

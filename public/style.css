@@ -1,0 +1,139 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: #0b1a0e;
+  overflow: hidden;
+  font-family: "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
+}
+
+#stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game {
+  display: block;
+  background: #1c7a37;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* ── HUD ─────────────────────────────────────────────────────────────── */
+#hud {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 6px 22px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+#score-home { color: #7db4ff; }
+#score-away { color: #ff8d7d; }
+#clock { font-variant-numeric: tabular-nums; font-size: 16px; color: #d9e6d9; }
+
+/* ── Center banner (goal / kickoff / fulltime) ───────────────────────── */
+#banner {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 36px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ── Start / end overlay ─────────────────────────────────────────────── */
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(4, 12, 6, 0.82);
+  color: #e9f5ea;
+  text-align: center;
+  padding: 24px;
+}
+#overlay h1 { font-size: 40px; letter-spacing: 6px; }
+#overlay p { font-size: 15px; color: #b9ccba; line-height: 1.7; }
+#overlay .controls-hint { font-size: 13px; color: #8fa890; }
+#overlay button {
+  margin-top: 10px;
+  padding: 12px 44px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  background: #2563eb;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#overlay button:active { background: #1d4ed8; }
+
+/* ── Touch controls ──────────────────────────────────────────────────── */
+#shoot-btn {
+  position: absolute;
+  right: 26px;
+  bottom: 30px;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: rgba(220, 38, 38, 0.75);
+  border: 3px solid rgba(255, 255, 255, 0.65);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+}
+#shoot-btn.pressed { background: rgba(185, 28, 28, 0.95); transform: scale(0.94); }
+
+#joystick {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+#joystick-knob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  transform: translate(-50%, -50%);
+}
+
+.hidden { display: none !important; }

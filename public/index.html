@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>快樂足球</title>
+  <meta name="description" content="俯視角 2D 足球小遊戲：你對戰電腦，3 分鐘一場。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stage">
+    <canvas id="game"></canvas>
+
+    <div id="hud">
+      <span id="score-home">0</span>
+      <span id="clock">3:00</span>
+      <span id="score-away">0</span>
+    </div>
+
+    <div id="banner" class="hidden"></div>
+
+    <div id="overlay">
+      <h1>快樂足球</h1>
+      <p>你（藍隊）對戰電腦（紅隊），3 分鐘一場</p>
+      <p class="controls-hint">
+        電腦：方向鍵或 WASD 移動，空白鍵射門<br>
+        手機：左側虛擬搖桿移動，右下按鈕射門
+      </p>
+      <button id="start-btn">開始比賽</button>
+    </div>
+
+    <div id="shoot-btn" class="hidden">射門</div>
+    <div id="joystick" class="hidden"><div id="joystick-knob"></div></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
