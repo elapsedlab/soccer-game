@@ -21,6 +21,14 @@
 npx wrangler dev        # 或任何靜態伺服器：python3 -m http.server -d public
 ```
 
+## Docker
+
+```bash
+docker compose up -d    # http://localhost:8080
+```
+
+以 nginx 直接掛載 `public/` 目錄提供服務，改檔案立即生效（重新整理頁面即可），適合本機或自架伺服器不走 Cloudflare 的情況。
+
 ## 部署
 
 ```bash

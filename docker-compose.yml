@@ -1,0 +1,11 @@
+# Local/self-hosted serving of the game without Cloudflare:
+#   docker compose up -d   →  http://localhost:8080
+services:
+  soccer:
+    image: nginx:alpine
+    container_name: soccer-game
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public:/usr/share/nginx/html:ro
+    restart: unless-stopped
